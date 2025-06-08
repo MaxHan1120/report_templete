@@ -1,15 +1,15 @@
 # NTU LaTeX Report Template
 
-本專案提供台大學生常用的 LaTeX 報告模板，支援分段撰寫、中文斷行與自訂格式，適用於課堂報告或期末作業。
+LaTeX 報告模板，支援分段撰寫、中文斷行與自訂格式，適用於課堂報告或期末作業。
 
-## ✅ 如何使用本模板
+## ✅ 如何使用本模
 
 ### 1. 從 GitHub 複製模板
 
-打開終端機或 PowerShell，執行以下指令（請將 `your-username` 改成你的 GitHub 使用者名稱）：
+打開終端機或 PowerShell，執行以下指令：
 
 ```bash
-git clone https://github.com/your-username/ntu-latex-template.git MyReport
+git clone https://https://github.com/MaxHan1120/report_templete MyReport
 cd MyReport
 ```
 
