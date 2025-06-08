@@ -1,0 +1,116 @@
+% ---------------------------------------------------------------------
+% Report Template (Refined for Reuse)
+% ---------------------------------------------------------------------
+% Author      : Max Han, modified by ChatGPT
+% Last Update : 2025.05.31
+
+% ---------------------------------------------------------------------
+% 01 Package Declaration
+% ---------------------------------------------------------------------
+\ProvidesPackage{Report}[2025/05/31 Report Template with Portable Font Support]
+
+% ---------------------------------------------------------------------
+% 02 Include Required Packages
+% ---------------------------------------------------------------------
+\RequirePackage{xeCJK}        % 中文排版支援
+\RequirePackage{fontspec}     % 字型設定
+\RequirePackage{geometry}     % 頁邊距
+\RequirePackage{graphicx}     % 插圖
+\RequirePackage{titling}      % 自訂標題格式
+\RequirePackage{lmodern}      % 現代拉丁文字型
+\RequirePackage{hyperref}     % 超連結
+\RequirePackage{fancyhdr}     % 頁首頁尾
+\RequirePackage{xcolor}       % 顏色設定
+\RequirePackage{amsmath, amsthm, amssymb} % 數學環境
+\RequirePackage{array}        % 表格對齊
+\RequirePackage{booktabs}     % 表格線條
+\RequirePackage[title, titletoc]{appendix} % 附錄支援
+\RequirePackage[sort&compress,square,comma,numbers]{natbib} % 參考文獻
+\RequirePackage{enumitem}     % 枚舉設定
+\RequirePackage{float}        % 漂浮物強制定位
+\RequirePackage[table]{xcolor}% 表格上色
+\RequirePackage{subcaption}   % 子圖支援
+\RequirePackage{listing}
+
+% ---------------------------------------------------------------------
+% 03 Font Configuration
+% ---------------------------------------------------------------------
+% 採用 Noto Sans TC 作為預設中文字型，建議搭配免費開源字型一起附上
+% 字型請放在 fonts/Noto/ 目錄下，檔名為 NotoSansTC-Regular.otf
+\XeTeXlinebreaklocale "zh"                       % Enable Chinese line breaking
+\XeTeXlinebreakskip = 0pt plus 1pt               % Line break tolerance
+\setCJKmainfont{BiauKai}[%
+    Path = ./fonts/Chinese/ ,
+    Extension = .ttf ,
+    BoldFont = Kaiti-Black
+]
+
+
+% ---------------------------------------------------------------------
+% 04 Page Layout
+% ---------------------------------------------------------------------
+\geometry{
+    left=20mm,
+    right=20mm,
+    top=30mm,
+    bottom=20mm
+}
+
+\setlength{\parskip}{1em}  % 段落間距
+\setlength{\parindent}{0pt} % 不縮排
+\setlength{\headheight}{14.5pt} % 避免 fancyhdr 警告
+\addtolength{\topmargin}{-2.5pt} % 微調頂端間距
+
+% ---------------------------------------------------------------------
+% 05 Hyperref Links
+% ---------------------------------------------------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    anchorcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% ---------------------------------------------------------------------
+% 06 Title and Author Blocks
+% ---------------------------------------------------------------------
+\newcommand{\mytitle}{Untitled}
+\newcommand{\mygroup}{Group 0}
+\newcommand{\myauthors}{No authors defined}
+\newcommand{\documentdate}{\today}
+
+\renewcommand{\title}[1]{\renewcommand{\mytitle}{#1}}
+\newcommand{\setgroup}[1]{\renewcommand{\mygroup}{#1}}
+\newcommand{\setauthors}[1]{\renewcommand{\myauthors}{#1}}
+\newcommand{\setdate}[1]{\renewcommand{\documentdate}{#1}}
+
+\renewcommand{\maketitle}{
+    \begingroup
+    \setlength{\parskip}{0pt}
+    \begin{center}
+        {\LARGE\bfseries \mytitle \par}
+        \vspace{1em}
+        {\large\bfseries \mygroup \par}
+        \vspace{0.5em}
+        \begin{tabular}{@{}ll}
+            \myauthors
+        \end{tabular}
+        \vspace{1em}
+        \hrule
+    \end{center}
+    \endgroup
+}
+
+% ---------------------------------------------------------------------
+% 07 Page Style Setup
+% ---------------------------------------------------------------------
+\fancypagestyle{mystyle}{
+    \fancyhf{}
+    \fancyhead[L]{Template}
+    \fancyhead[R]{Final Report}
+    \fancyfoot[L]{\documentdate}
+    \fancyfoot[C]{\thepage}
+    \fancyfoot[R]{}
+}
+\pagestyle{mystyle}

@@ -1,0 +1,45 @@
+\documentclass[a4paper, 12pt]{article}
+
+% 使用自定樣板：BMEReport.sty
+\usepackage{Report}
+
+% 額外常用套件
+
+% --------------------------------------------------
+% 設定標題、組別、成員與日期
+\title{Report template}
+\setgroup{Group}
+\setauthors{   
+    B11202010 韓裕民 \\
+}
+\setdate{June 2025}
+% --------------------------------------------------
+
+\begin{document}
+% 產生封面
+
+\maketitle
+
+% 章節內容（可放在 contents 資料夾中）
+\input{contents/01_introduction}  % 簡介
+%\input{contents/02_task1}         % 任務一
+%\input{contents/03_task2}         % 任務二
+%\input{contents/04_task3}         % 任務三
+%\input{contents/05_teamwork}      % 分工與合作情況
+
+% 附錄區段
+\begin{appendices}
+%\input{back/appendix01}           % 原始數據或補充內容
+%\input{back/appendix02}
+%\input{back/appendix03}
+%\input{back/appendix04}
+\end{appendices}
+
+% 參考文獻
+\bibliographystyle{ieeetr}         % IEEE 樣式（數字、排序）
+\bibliography{back/references}     % 請建立 back/references.bib
+
+% 註記：
+% 此報告透過 ChatGPT 協助潤飾與討論
+
+\end{document}
