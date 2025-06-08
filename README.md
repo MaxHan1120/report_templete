@@ -9,7 +9,7 @@ LaTeX 報告模板，支援分段撰寫、中文斷行與自訂格式，適用�
 打開終端機或 PowerShell，執行以下指令：
 
 ```bash
-git clone https://https://github.com/MaxHan1120/report_templete MyReport
+git clone https://github.com/MaxHan1120/report_templete MyReport
 cd MyReport
 ```
 
